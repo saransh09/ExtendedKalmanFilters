@@ -56,6 +56,21 @@ public:
    * Updates the state by using standard Kalman Filter equations
    * @param z The measurement at k+1
    */
+  
+  void NormalizeAngle(double& phi);
+  /**
+   * The anlge should be in the range (-pi/2,pi/2) for the proper calculations
+   * This is achieved using the atan2 function
+   */
+  
+  void KF(const Eigen::VectorXd& y);
+  /**
+   * A lot of the calculation part in the Kalman Filter and the Extended Kalman Filter
+   * are same, so these Linear Algebra calculations are performed in this KF function
+   */
+
+    
+
   void Update(const Eigen::VectorXd &z);
 
   /**
